@@ -1,0 +1,1 @@
+javascript:(function(){ var style = document.createElement(%27style%27), styleContent = document.createTextNode(%27 #secondary, #meta, #comments, #info {display: none !important;}%27); style.appendChild(styleContent ); var caput = document.getElementsByTagName(%27head%27); caput[0].appendChild(style); })();

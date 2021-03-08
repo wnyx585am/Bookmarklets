@@ -1,1 +1,1 @@
-javascript:window.location.href='http://web.archive.org/web/*/'+window.location.href;
+javascript:(function(){var currentLocation = window.location.href;window.open('http://web.archive.org/web/*/'+currentLocation);})();

@@ -1,0 +1,1 @@
+javascript:(function(){var now = new Date().getTime();var rand1 = Math.floor(Math.random() * now);var rand2 = Math.floor(Math.random() * now);var coord = '44.'+rand1+','+'-93.'+rand2;window.open('https://www.google.com/maps/place/'+coord);})();

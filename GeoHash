@@ -1,1 +1,12 @@
+//Original
 javascript:(function(){var now = new Date().getTime();var rand1 = Math.floor(Math.random() * now);var rand2 = Math.floor(Math.random() * now);var coord = '44.'+rand1+','+'-93.'+rand2;window.open('https://www.google.com/maps/place/'+coord);})();
+
+//Coordinate randomization fixed; Drive box size is hard-coded
+javascript:(function(){var now = new Date().getTime();var rand1 = Math.floor(Math.random() * now);var rand2 = Math.floor(Math.random() * now);/* // 2 Hour Drive Box;var minLat = 43.5;var maxLat = 46.4408;var minLng = -95.5383;var maxLng = -92.7500;// 1.5-Hour Drive Box;var minLat = 44.1500; var maxLat = 45.5500; var minLng = -94.2000; var maxLng = -92.7500; */ /* 1-Hour Drive Box */ var minLat = 44.4500; var maxLat = 45.2500; var minLng = -93.7500; var maxLng = -92.8500; var lat = (Math.random() * (maxLat - minLat) + minLat).toFixed(6); var lng = (Math.random() * (maxLng - minLng) + minLng).toFixed(6);var coord = lat + ',' + lng;window.open('https://www.google.com/maps/place/'+coord);})();
+
+//URL parameter-based drive box selection
+javascript:(function(){var p=new URLSearchParams(window.location.search);var l=p.get('limit');var minLat=44.1500,maxLat=45.5500,minLng=-94.2000,maxLng=-92.7500;if(l==="1"){minLat=44.4500;maxLat=45.2500;minLng=-93.7500;maxLng=-92.8500;}else if(l==="2"){minLat=43.5000;maxLat=46.4408;minLng=-95.5383;maxLng=-92.7500;}var lat=(Math.random()*(maxLat-minLat)+minLat).toFixed(6);var lng=(Math.random()*(maxLng-minLng)+minLng).toFixed(6);window.open('https://google.com/maps/place/'+lat+','+lng);})();
+
+//Prompt-based drive box selection
+javascript:(function(){var choice=prompt("Enter driving limit in hours (1, 1.5, or 2):","1.5");var minLat=44.1500,maxLat=45.5500,minLng=-94.2000,maxLng=-92.7500;if(choice==="1"){minLat=44.4500;maxLat=45.2500;minLng=-93.7500;maxLng=-92.8500;}else if(choice==="2"){minLat=43.5000;maxLat=46.4408;minLng=-95.5383;maxLng=-92.7500;}if(choice!==null){var lat=(Math.random()*(maxLat-minLat)+minLat).toFixed(6);var lng=(Math.random()*(maxLng-minLng)+minLng).toFixed(6);window.open('https://google.com/maps/place/'+lat+','+lng);}})();
+
